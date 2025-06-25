@@ -19,6 +19,7 @@ namespace AppLanches
     		builder.Logging.AddDebug();
 #endif
 
+            builder.Services.AddHttpClient();
             return builder.Build();
         }
     }
