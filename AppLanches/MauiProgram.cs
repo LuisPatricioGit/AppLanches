@@ -1,4 +1,6 @@
-﻿using AppLanches.Services;
+﻿using System.ComponentModel.DataAnnotations;
+using AppLanches.Services;
+using AppLanches.Validations;
 using Microsoft.Extensions.Logging;
 
 namespace AppLanches;
@@ -22,6 +24,8 @@ public static class MauiProgram
 
         builder.Services.AddHttpClient();
         builder.Services.AddSingleton<ApiService>();
+        builder.Services.AddSingleton<IValidator, Validations.Validator>();
+
 
         return builder.Build();
     }

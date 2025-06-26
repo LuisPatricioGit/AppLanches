@@ -9,7 +9,7 @@ namespace AppLanches.Services;
 public class ApiService
 {
     private readonly HttpClient _httpClient;
-    private readonly string _baseUrl = "https://lf3jvkgb-7066.brs.devtunnels.ms/";
+    private readonly string _baseUrl = "https://3jt2mrl8-7025.uks1.devtunnels.ms/";
     private readonly ILogger<ApiService> _logger;
 
     JsonSerializerOptions _serializerOptions;
