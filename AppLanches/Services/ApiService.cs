@@ -1,8 +1,8 @@
-﻿using System.Net;
+﻿using AppLanches.Models;
+using Microsoft.Extensions.Logging;
+using System.Net;
 using System.Text;
 using System.Text.Json;
-using AppLanches.Models;
-using Microsoft.Extensions.Logging;
 
 namespace AppLanches.Services;
 
@@ -24,7 +24,7 @@ public class ApiService
         };
     }
 
-    public async Task<ApiResponse<bool>> RegisterUser(string name, string email,
+    public async Task<ApiResponse<bool>> RegistrarUsuario(string name, string email,
                                                           string phone, string password)
     {
         try
@@ -55,7 +55,7 @@ public class ApiService
         }
         catch (Exception ex)
         {
-            _logger.LogError($"Erro ao registrar o utilizador: {ex.Message}");
+            _logger.LogError($"Erro ao registrar o usuário: {ex.Message}");
             return new ApiResponse<bool> { ErrorMessage = ex.Message };
         }
     }
@@ -113,4 +113,3 @@ public class ApiService
         }
     }
 }
-
